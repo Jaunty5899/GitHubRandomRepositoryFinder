@@ -1,0 +1,9 @@
+.cardContainer {
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.289);
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  border-radius: 5px;
+  padding: 15px;
+}

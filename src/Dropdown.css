@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 180px;
-  height: 100%;
 }
 .dropDownButton {
   display: flex;

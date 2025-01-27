@@ -1,7 +1,7 @@
 import "./Dropdown.css";
 import { useState } from "react";
 
-export default function Dropdown({ Data }) {
+export default function Dropdown({ Data, selectFunction }) {
   const [toggle, setToggle] = useState(false);
   const [choice, setChoice] = useState(Data[0].title);
   return (
@@ -16,6 +16,7 @@ export default function Dropdown({ Data }) {
             className={`dropDownOption ${e.title == choice && "activeMarker"}`}
             onClick={() => {
               setChoice(e.title);
+              selectFunction(e.value);
               setToggle(false);
             }}
           >

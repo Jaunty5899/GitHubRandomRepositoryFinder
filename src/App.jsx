@@ -1,5 +1,7 @@
 import "./App.css";
 import Dropdown from "./Dropdown";
+import Card from "./Card";
+import { useState } from "react";
 
 const data = [
   {
@@ -1229,10 +1231,15 @@ const data = [
 ];
 
 function App() {
+  const [selectedLanguage, setSelectedLanguage] = useState(data[0].value);
+  function setLanguage(language) {
+    setSelectedLanguage(language);
+  }
   return (
     <div className="container">
       <span className="title">GitHub Repository Finder</span>
-      <Dropdown Data={data} />
+      <Dropdown Data={data} selectFunction={setLanguage} />
+      <Card Data={selectedLanguage} />
     </div>
   );
 }
