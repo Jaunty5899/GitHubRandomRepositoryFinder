@@ -4,6 +4,7 @@
   background-color: rgba(128, 128, 128, 0.289);
   border-radius: 5px;
   padding: 15px;
+  max-width: 250px;
 }
 .cardTitle {
   margin: 0;
@@ -11,4 +12,16 @@
 .cardDescription {
   margin: 0;
   color: rgba(255, 255, 255, 0.548);
+}
+.repoInfo {
+  display: flex;
+  justify-content: space-around;
+  font-size: smaller;
+  margin-top: 10px;
+  gap: 7px;
+}
+.repoInfo > div {
+  display: flex;
+  gap: 2px;
+  align-items: center;
 }

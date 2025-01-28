@@ -1239,7 +1239,6 @@ export default function App() {
     const RandomNumber = Math.floor(Math.random() * 30);
     const response = await fetch(`${GitHubAPI}${language}`);
     const jsonResponse = await response.json();
-    // console.log(jsonResponse.items[RandomNumber]);
     setSelectedLanguage(jsonResponse.items[RandomNumber]);
   }
 

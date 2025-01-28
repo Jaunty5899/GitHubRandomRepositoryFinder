@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,6 @@
   padding: 20px 15px 20px 15px;
   border: 2px solid white;
   border-radius: 5px;
-  max-width: 225px;
   position: relative;
 }
 .title {
