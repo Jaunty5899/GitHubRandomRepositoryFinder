@@ -1230,11 +1230,19 @@ const data = [
   },
 ];
 
-function App() {
+const GitHubAPI = "https://api.github.com/search/repositories?q=language:";
+
+export default function App() {
   const [selectedLanguage, setSelectedLanguage] = useState(data[0].value);
-  function setLanguage(language) {
-    setSelectedLanguage(language);
+
+  async function setLanguage(language) {
+    const RandomNumber = Math.floor(Math.random() * 30);
+    const response = await fetch(`${GitHubAPI}${language}`);
+    const jsonResponse = await response.json();
+    // console.log(jsonResponse.items[RandomNumber]);
+    setSelectedLanguage(jsonResponse.items[RandomNumber]);
   }
+
   return (
     <div className="container">
       <span className="title">GitHub Repository Finder</span>
@@ -1243,5 +1251,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
