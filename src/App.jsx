@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const data = [
   {
-    title: "All Languages",
+    title: "Select Language",
     value: "",
   },
   {
@@ -1246,7 +1246,7 @@ export default function App() {
     <div className="container">
       <span className="title">GitHub Repository Finder</span>
       <Dropdown Data={data} selectFunction={setLanguage} />
-      <Card Data={selectedLanguage} />
+      <Card Data={selectedLanguage} selectFunction={setLanguage} />
     </div>
   );
 }

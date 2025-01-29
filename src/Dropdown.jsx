@@ -16,7 +16,7 @@ export default function Dropdown({ Data, selectFunction }) {
             className={`dropDownOption ${e.title == choice && "activeMarker"}`}
             onClick={() => {
               setChoice(e.title);
-              selectFunction(e.value);
+              e.value && selectFunction(e.value);
               setToggle(false);
             }}
           >
