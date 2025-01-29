@@ -58,7 +58,7 @@ export default function Card({ Data, selectFunction }) {
             className={`refreshButton material-icons ${Data.error && "retry"}`}
             onClick={() => selectFunction(Data.item.language)}
           >
-            refresh
+            {!Data.error ? "refresh" : "restart_alt"}
           </button>
         </>
       )}
