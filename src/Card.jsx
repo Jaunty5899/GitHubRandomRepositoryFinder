@@ -7,9 +7,9 @@ function roundToK(num) {
 export default function Card({ Data, selectFunction }) {
   return (
     <div className="cardContainer">
-      <h3 className="cardTitle">
+      <h4 className="cardTitle">
         {!Data ? "Please select a language" : Data.name.toUpperCase()}
-      </h3>
+      </h4>
       {Data && (
         <>
           <p className="cardDescription">{Data.description}</p>
@@ -42,10 +42,10 @@ export default function Card({ Data, selectFunction }) {
             </div>
           </div>
           <button
-            className="refreshButton"
+            className="refreshButton material-icons"
             onClick={() => selectFunction(Data.language)}
           >
-            Refresh
+            refresh
           </button>
         </>
       )}

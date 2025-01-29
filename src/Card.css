@@ -11,7 +11,7 @@
 }
 .cardDescription {
   margin: 0;
-  color: rgba(255, 255, 255, 0.548);
+  color: rgb(255, 255, 255, 0.8);
   font-size: smaller;
 }
 .repoInfo {
@@ -30,4 +30,10 @@
 }
 .material-icons {
   font-size: 17px;
+}
+.cardBackgroundRed {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+.retry {
+  background-color: rgba(255, 0, 0, 0.5);
 }
