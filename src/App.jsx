@@ -1234,12 +1234,15 @@ const GitHubAPI = "https://api.github.com/search/repositories?q=language:";
 
 export default function App() {
   const [selectedLanguage, setSelectedLanguage] = useState(data[0].value);
-
   async function setLanguage(language) {
-    const RandomNumber = Math.floor(Math.random() * 30);
-    const response = await fetch(`${GitHubAPI}${language}`);
-    const jsonResponse = await response.json();
-    setSelectedLanguage(jsonResponse.items[RandomNumber]);
+    try {
+      const RandomNumber = Math.floor(Math.random() * 30);
+      const response = await fetch(`${GitHubAPI}${language}`);
+      const jsonResponse = await response.json();
+      setSelectedLanguage(jsonResponse.items[RandomNumber]);
+    } catch (error) {
+      setSelectedLanguage("error");
+    }
   }
 
   return (

@@ -6,43 +6,55 @@ function roundToK(num) {
 
 export default function Card({ Data, selectFunction }) {
   return (
-    <div className="cardContainer">
+    <div className={`cardContainer ${Data == "error" && "cardBackgroundRed"}`}>
       <h4 className="cardTitle">
-        {!Data ? "Please select a language" : Data.name.toUpperCase()}
+        {!Data
+          ? "Please select a language"
+          : Data == "error"
+          ? "Error fetching repositories"
+          : Data.name.toUpperCase()}
       </h4>
       {Data && (
         <>
-          <p className="cardDescription">{Data.description}</p>
-          <div className="repoInfo">
-            <div className="repoInfoLanguage">
-              <span className="repoInfoItemTitle material-icons">circle</span>
-              <span className="repoInfoItemValue">{Data.language}</span>
-            </div>
-            <div className="repoInfoItem">
-              <span className="repoInfoItemTitle material-icons">star</span>
-              <span className="repoInfoItemValue">
-                {roundToK(Data.stargazers_count)}
-              </span>
-            </div>
-            <div className="repoInfoItem">
-              <span className="repoInfoItemTitle material-icons">
-                workspaces
-              </span>
-              <span className="repoInfoItemValue">
-                {roundToK(Data.forks_count)}
-              </span>
-            </div>
-            <div className="repoInfoItem">
-              <span className="repoInfoItemTitle material-icons">
-                bug_report
-              </span>
-              <span className="repoInfoItemValue">
-                {roundToK(Data.open_issues_count)}
-              </span>
-            </div>
-          </div>
+          {Data != "error" && (
+            <>
+              <p className="cardDescription">{Data.description}</p>
+              <div className="repoInfo">
+                <div className="repoInfoLanguage">
+                  <span className="repoInfoItemTitle material-icons">
+                    circle
+                  </span>
+                  <span className="repoInfoItemValue">{Data.language}</span>
+                </div>
+                <div className="repoInfoItem">
+                  <span className="repoInfoItemTitle material-icons">star</span>
+                  <span className="repoInfoItemValue">
+                    {roundToK(Data.stargazers_count)}
+                  </span>
+                </div>
+                <div className="repoInfoItem">
+                  <span className="repoInfoItemTitle material-icons">
+                    workspaces
+                  </span>
+                  <span className="repoInfoItemValue">
+                    {roundToK(Data.forks_count)}
+                  </span>
+                </div>
+                <div className="repoInfoItem">
+                  <span className="repoInfoItemTitle material-icons">
+                    bug_report
+                  </span>
+                  <span className="repoInfoItemValue">
+                    {roundToK(Data.open_issues_count)}
+                  </span>
+                </div>
+              </div>
+            </>
+          )}
           <button
-            className="refreshButton material-icons"
+            className={`refreshButton material-icons ${
+              Data == "error" && "retry"
+            }`}
             onClick={() => selectFunction(Data.language)}
           >
             refresh
