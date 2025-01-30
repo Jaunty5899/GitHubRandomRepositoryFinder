@@ -55,3 +55,7 @@
 .centerElements > button {
   align-self: flex-end;
 }
+.centerTitle {
+  justify-content: center;
+  align-items: center;
+}

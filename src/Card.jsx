@@ -9,7 +9,7 @@ export default function Card({ Data, selectFunction }) {
     <div
       className={`cardContainer ${
         Data.error && "cardBackgroundRed centerElements"
-      } ${!Data.item && "centerElements"}`}
+      } ${!Data.item && "centerTitle"}`}
     >
       <h4 className="cardTitle">
         {!Data.item
