@@ -4,7 +4,13 @@
   background-color: rgba(128, 128, 128, 0.289);
   border-radius: 5px;
   padding: 15px;
-  width: 250px;
+  width: 225px;
+  min-height: 200px;
+}
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .cardTitle {
   margin: 0;
@@ -14,6 +20,7 @@
   color: rgb(255, 255, 255, 0.8);
   font-size: smaller;
   word-wrap: break-word;
+  flex-grow: 1;
 }
 .repoInfo {
   display: flex;
@@ -37,4 +44,14 @@
 }
 .retry {
   background-color: rgba(255, 0, 0, 0.5);
+}
+.centerElements {
+  display: grid;
+}
+.centerElements > h4 {
+  align-self: flex-end;
+  justify-self: center;
+}
+.centerElements > button {
+  align-self: flex-end;
 }

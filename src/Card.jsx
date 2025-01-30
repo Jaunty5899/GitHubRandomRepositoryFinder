@@ -5,9 +5,12 @@ function roundToK(num) {
 }
 
 export default function Card({ Data, selectFunction }) {
-  console.log(Data);
   return (
-    <div className={`cardContainer ${Data.error && "cardBackgroundRed"}`}>
+    <div
+      className={`cardContainer ${
+        Data.error && "cardBackgroundRed centerElements"
+      } ${!Data.item && "centerElements"}`}
+    >
       <h4 className="cardTitle">
         {!Data.item
           ? "Please select a language"
@@ -18,7 +21,7 @@ export default function Card({ Data, selectFunction }) {
       {Data.item && (
         <>
           {!Data.error && (
-            <>
+            <div className="cardBody">
               <p className="cardDescription">{Data.item.description}</p>
               <div className="repoInfo">
                 <div className="repoInfoLanguage">
@@ -52,7 +55,7 @@ export default function Card({ Data, selectFunction }) {
                   </span>
                 </div>
               </div>
-            </>
+            </div>
           )}
           <button
             className={`refreshButton material-icons ${Data.error && "retry"}`}
