@@ -25,7 +25,7 @@
 .repoInfo {
   display: flex;
   justify-content: space-around;
-  font-size: small;
+  font-size: smaller;
   margin-top: 10px;
 }
 .repoInfo > div {
